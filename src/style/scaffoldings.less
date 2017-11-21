@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+
+  font-size: 16px;
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  position: relative;
+
+  min-width: 1200px;
+  margin: 0;
+
+  font-family: @font-main;
+
+  background-color: @yellow;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.container {
+  min-width: 1200px;
+  max-width: 1900px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

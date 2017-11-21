@@ -1,0 +1,42 @@
+.page-toggler {
+  position: fixed;
+  bottom: 50%;
+  left: 30px;
+  z-index: 10;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+  transform: translate(0, 50%);
+
+  div {
+    margin-bottom: 15px;
+    font-size: 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  div.active span {
+    background-color: @yellow;
+  }
+
+  span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid @yellow;
+    border-radius: 50%;
+
+    background-color: transparent;
+    transition: all 0.5s linear;
+    cursor: pointer;
+
+    &:hover {
+      background-color: @white;
+      transition: all 0.3s linear;
+    }
+  }
+}
