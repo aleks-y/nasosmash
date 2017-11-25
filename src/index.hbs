@@ -8,8 +8,8 @@
   {{> components/main-nav/main-nav}}
   {{> components/page-toggler/page-toggler}}
 
-  <div class="owl-carousel">
-  	<section class="section section--1">
+  <div id="pt-main">
+  	<section class="section section--1 pt-page">
       <div class="section__bg-image"></div>
       <div class="section__content">
         <h2 class="section__logo">Завод &laquo;Насосмаш&raquo;</h2>
@@ -26,7 +26,7 @@
       </div>
     </section>
 
-  	<section class="section section--2">
+  	<section class="section section--2 pt-page">
       <div class="section__bg-image"></div>
       <div class="section__content">
         <h2 class="section__logo">Завод &laquo;Насосмаш&raquo;</h2>
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-  	<section class="section section--3">
+  	<section class="section section--3 pt-page">
       <div class="section__bg-image"></div>
         <div class="section__content">
           <h2 class="section__logo">Завод &laquo;Насосмаш&raquo;</h2>
@@ -57,7 +57,7 @@
         </div>
     </section>
 
-    <section class="section section--4">
+    <section class="section section--4 pt-page">
       <div class="section__bg-image"></div>
       <div class="section__content">
         <h2 class="section__logo">Завод &laquo;Насосмаш&raquo;</h2>
@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <section class="section section--5">
+    <section class="section section--5 pt-page">
       <div class="section__bg-image"></div>
       <div class="section__content">
         <h2 class="section__logo">Завод &laquo;Насосмаш&raquo;</h2>
@@ -108,8 +108,6 @@
     {{/inline}} -->
 
   {{#* inline "scripts-block"}}
-    {{> layouts/index.scripts}}
-    <script>console.log("custom script")</script>
+    <script src="plugins/modernizr/modernizr.custom.js"></script>
   {{/inline}}
-
 {{/layouts/base}}

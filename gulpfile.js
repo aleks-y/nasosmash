@@ -8,7 +8,7 @@ var  sourcemaps        = require('gulp-sourcemaps');
 var  cssmin            = require('gulp-clean-css');
 var  imagemin          = require('gulp-imagemin');
 var  pngquant          = require('imagemin-pngquant');
-var  browserSync       = require('browser-sync');
+var  browserSync       = require("browser-sync");
 var  reload            = browserSync.reload;
 var  rimraf            = require('rimraf');
 var  plumber           = require('gulp-plumber');
@@ -26,6 +26,11 @@ var wrap               = require('gulp-wrap');
 var handlebars         = require('gulp-handlebars');
 var declare            = require('gulp-declare');
 
+var browserify         = require('browserify');
+var babel              = require('gulp-babel');
+var babelify           = require('babelify');
+var source             = require('vinyl-source-stream');
+
 var path = {
     build: {
         //Адреса куда ложить файлы сборки
@@ -34,26 +39,27 @@ var path = {
         css: 'build/css/',
         img: 'build/img/',
         fonts: 'build/fonts/',
+        cssVendor:'build/css/semantic/',
         plugins: 'build/plugins/',
         files: 'build/download/',
-        vendor: 'build/vendor/',
-        assets: 'build/assets/'
+        vendor: 'build/vendor/'
     },
     src: {
         //Откуда брать исходники
         html: 'src/*.html',
-        js: ['src/partials/components/**/*.js', 'src/js/**/*.js'],
+        js: ['src/partials/components/**/*.js'],
         css: ['src/style/main.less', 'src/font-awesome-4.7.0/css/font-awesome.min.css'],
         img: ['src/img/**/*.*', '!src/img/icon'],
         sprite: 'src/img/icon/*.svg',
         fonts: 'src/fonts/**/*.*',
         cssVendor: 'src/style/semantic/*.css',
-        plugins: 'src/plugins/**/*.*',
-        files: 'src/download/**/*.*',
-        precompile: './src/precompiled/*.html',
-        partials: './src/partials',
-        pages: './src/*.hbs',
-        assets: './src/assets/*.*'
+        plugins: "src/plugins/**/*.*",
+        files: "src/download/**/*.*",
+        precompile: "./src/precompiled/*.html",
+        partials: "./src/partials",
+        pages: "./src/*.hbs",
+        semantic: "./src/semantic/*.*",
+        jsEntry: "./src/js/main.js"
     },
     watch: {
         //За изменениями каких файлов мы хотим наблюдать
@@ -65,32 +71,26 @@ var path = {
         sprite: 'src/img/icon/*.svg',
         fonts: 'src/fonts/**/*.*',
         plugins: 'src/plugins/**/*.*',
-        files: 'src/download/**/*.*',
-        assets: './src/assets/*.*'
+        files: 'src/download/**/*.*'
     },
     clean: './build'
 };
 
 var config = {
     server: {
-        baseDir: './build'
+        baseDir: "./build"
     },
     // tunnel: true,
     host: 'localhost',
     port: 9000,
-    logPrefix: 'SoftMind'
+    logPrefix: "SoftMind"
 };
 
-gulp.task('assets', function(){
-  return gulp.src(path.src.assets)
-    .pipe(gulp.dest(path.build.assets));
-});
-
 gulp.task('ttf2woff', function(){
-    gulp.src(['./src/fonts/*.ttf'])
+    gulp.src(['./src/fonts/**/*.ttf'])
         .pipe(ttf2woff())
         .pipe(gulp.dest('./src/fonts'));
-    gulp.src(['./src/fonts/*.ttf'])
+    gulp.src(['./src/fonts/**/*.ttf'])
         .pipe(ttf2woff2())
         .pipe(gulp.dest('./src/fonts'));
 });
@@ -112,10 +112,24 @@ gulp.task('html:build', function() {
 
 gulp.task('js:build', function() {
     return gulp.src(path.src.js)
+      .pipe(babel({
+        presets: ['env', ['es2015']]
+      }))
     // .pipe(uglify()) //Сжимаем js
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest(path.build.js))
-        .pipe(reload({stream:true}));
+      .pipe(concat('component.js'))
+      .pipe(gulp.dest(path.build.js))
+      .pipe(reload({stream:true}));
+});
+
+gulp.task("js:bundle", function() {
+  return browserify(path.src.jsEntry,{
+    debug: true,
+    extensions: ["es6"]
+  })
+    .transform(babelify, {presets: ["env", "es2015"]})
+    .bundle()
+    .pipe(source("app.js"))
+    .pipe(gulp.dest("build/js"));
 });
 
 gulp.task('css:build', function() {
@@ -150,7 +164,7 @@ gulp.task('cssVendor', function() {
 //         .pipe(reload({stream: true}));
 // });
 
-gulp.task('image:build', function() {
+gulp.task("image:build", function() {
   return gulp.src(path.src.img)
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
@@ -207,7 +221,7 @@ gulp.task('sprite:build', function() {
     .pipe(svgstore({
       inlineSvg: true
     }))
-    .pipe(rename('sprite.svg'))
+    .pipe(rename("sprite.svg"))
     .pipe(gulp.dest(path.build.img))
     .pipe(reload({stream: true}));
 });
@@ -263,6 +277,7 @@ gulp.task('build', sequence([
     [
         'html:build',
         'js:build',
+        'js:bundle',
         'css:build',
         'cssVendor',
         'fonts:build',
@@ -270,7 +285,7 @@ gulp.task('build', sequence([
         'sprite:build',
         'plugins:copy',
         'precompile',
-        'assets'
+        'semantic:copy'
     ]) );
 
 gulp.task('watch', function() {
@@ -284,7 +299,7 @@ gulp.task('watch', function() {
         gulp.start('css:build');
     });
     watch([path.watch.js], function(event, cb) {
-        gulp.start('js:build');
+        gulp.start(['js:build', 'js:bundle']);
     });
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
@@ -300,9 +315,6 @@ gulp.task('watch', function() {
     });
     watch([path.watch.files], function(event, cb) {
         gulp.start('files:copy');
-    });
-    watch([path.watch.assets], function(event, cb) {
-        gulp.start('assets');
     });
 });
 
