@@ -42,7 +42,7 @@ module.exports = (function() {
 	  nextPage({animation: 18, showPage: targetPage});
   }
 
-	function nextPage(options) {
+	function nextPage(options = {animation: 17}) {
 		let animation = (options.animation) ? options.animation : options;
     let targetPage = (options.showPage || options.showPage >= 0) ? options.showPage : current + 1;
 

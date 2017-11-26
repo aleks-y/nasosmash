@@ -2,11 +2,12 @@ $(window).on('load', function() {
   const List = require("./libs/List");
   const PageTransitions = require("./pageTrasitions/js/pagetransitions");
   const eventBus = require("./libs/EventEmitter").EventEmitter;
+  const getRandom = require("./libs/RandomNuber").getRandomInclusive;
   const delay = 7000;
   let timer;
 
   function carouselLoop (index) {
-    PageTransitions.nextPage({animation: 17, showPage: index});
+    PageTransitions.nextPage({animation: getRandom(17, 27), showPage: index});
     timer = setTimeout(carouselLoop, delay);
   }
   // PageTransitions.nextPage({animation: 17});
