@@ -10,6 +10,7 @@ module.exports = (function() {
 		isAnimating = false,
     endCurrPage = false,
     endNextPage = false,
+    reverse = false,
 		animEndEventNames = {
 			'WebkitAnimation' : 'webkitAnimationEnd',
 			'OAnimation' : 'oAnimationEnd',
@@ -33,24 +34,29 @@ module.exports = (function() {
 		$pages.eq( current ).addClass( 'pt-page-current' );
 	}
 
+	function prevPage() {
+	  let targetPage;
+	  reverse = true;
+    (current - 1 < 0) ? targetPage = pagesCount - 1: targetPage = current - 1;
+    console.log('>>>', current, targetPage);
+	  nextPage({animation: 18, showPage: targetPage});
+  }
+
 	function nextPage(options) {
 		let animation = (options.animation) ? options.animation : options;
-    let targetPage = (options.showPage) ? options.showPage : current + 1;
-    console.log(isAnimating);
+    let targetPage = (options.showPage || options.showPage >= 0) ? options.showPage : current + 1;
+
 		if( isAnimating ) {
 			return false;
 		}
-    console.log(isAnimating);
+
 		isAnimating = true;
 
 		let $currPage = $pages.eq( current++ );
 
-    if ( current > pagesCount - 1) {
-      current = 0;
+    if ( current > pagesCount - 1 && !reverse) {
       targetPage = 0;
     }
-
-    console.log(current, targetPage);
 
 		let $nextPage = $pages.eq( targetPage ).addClass( 'pt-page-current' );
     let [outClass, inClass] = animations(animation);
@@ -74,13 +80,15 @@ module.exports = (function() {
 		if( !support ) {
 			onEndAnimation( $currPage, $nextPage );
 		}
-
+		current = targetPage;
+    console.log('after', current, targetPage);
 	}
 
 	function onEndAnimation( $outpage, $inpage ) {
     endCurrPage = false;
     endNextPage = false;
 		isAnimating = false;
+		reverse = false;
 		resetPage($outpage, $inpage);
 	}
 
@@ -93,8 +101,9 @@ module.exports = (function() {
 	init();
 
 	return {
-		init : init,
-		nextPage : nextPage,
+		init,
+		nextPage,
+    prevPage
 	};
 
 })();
