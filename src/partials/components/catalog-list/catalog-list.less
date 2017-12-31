@@ -1,0 +1,138 @@
+.catalog-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  margin-bottom: 70px;
+}
+
+.catalog-list__item {
+  position: relative;
+
+  width: 30%;
+  margin-bottom: 30px;
+
+  background-color: @white;
+
+  &:hover .catalog-list__hover {
+    transform: scaleY(1);
+  }
+
+  &:hover .catalog-list__links {
+    transform: scaleY(1);
+  }
+
+  &:hover img {
+    border-color: @white;
+  }
+}
+
+.catalog-list__hover {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: 0;
+  left: -10px;
+  z-index: 5;
+
+
+  background-color: @primary;
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+}
+
+.catalog-list__links {
+  position: absolute;
+  top: 100%;
+  right: -10px;
+  left: -10px;
+  z-index: 20;
+
+  padding: 20px;
+  margin: 0;
+
+  list-style: none;
+
+  background-color: @primary;
+  transition: all 0.3s ease-out;
+  transform: scaleY(0);
+  transform-origin: top;
+
+  li {
+    display: inline-block;
+    margin-right: 2px;
+
+    font-size: 0;
+    vertical-align: baseline;
+  }
+
+  a {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-decoration: none;
+    color: @black;
+
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.catalog-list__image {
+  position: relative;
+  z-index: 10;
+
+  padding: 0;
+  margin: 0;
+
+  background-color: @white;
+
+  figcaption {
+    padding: 10px 15px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid gray;
+
+    transition: all 0.2s linear;
+  }
+
+  h2 {
+    margin: 0;
+
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.catalog__description {
+  padding: 30px 0 10px;
+
+  p {
+    margin-bottom: 0.5em;
+
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: gray;
+  }
+
+  p:last-child {
+    margin: 0;
+  }
+}
