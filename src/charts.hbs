@@ -1,0 +1,22 @@
+{{#> layouts/base title="Index" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+    {{> components/main-nav/main-nav}}
+
+    {{> components/charts/charts}}
+  {{/inline}}
+
+  {{#* inline "footer-block"}}
+    <footer class="footer-main">
+
+    </footer>
+    {{/inline}}
+
+  {{#* inline "scripts-block"}}
+    <script src="plugins/e-charts/e-charts.js"></script>
+  {{/inline}}
+{{/layouts/base}}
