@@ -1,0 +1,30 @@
+{{#> layouts/base title="Каталог продукции" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+  {{> components/main-nav/main-nav}}
+
+  <div class="page page--inner">
+    <div class="container">
+      {{> components/page-title/page-title title="Каталог"}}
+      {{> components/catalog-list/catalog-list}}
+      {{> components/btn/btn link="#" class="btn--inner" title="Задать вопрос"}}
+
+      <div class="catalog__sescription">
+        <p>Мы&nbsp;осуществляем поставки насосного оборудования ля&nbsp;нефтяной и&nbsp;газовой сферы и&nbsp;запасных частей к&nbsp;нему. ООО&laquo;НАСОСМАШ&raquo; является лидером по&nbsp;продаже нового оборудования, с&nbsp;использованием качественных материалов в&nbsp;оговоренные сроки.</p>
+        <p>ООО НПС &laquo;НАСОСМАШ&raquo;&nbsp;&mdash; компания, обладающая производственными, финансовыми возможностями и&nbsp;большим опытом для решения различных задач по&nbsp;изготовлению оборудования для предприятий нефтегазовой и&nbsp;химической промышленности.</p>
+        <p>Компания обладает большим опытом изготовления насосного оборудования, а&nbsp;также нестандартного оборудования по&nbsp;чертежам заказчика для отдельных производств (оборудование цементного завода, оборудование экологического назначения, факельные системы).</p>
+      </div>
+    </div>
+  </div>
+
+  {{> components/footer-main/footer-main}}
+  {{/inline}}
+
+  {{#* inline "scripts-block"}}
+
+  {{/inline}}
+{{/layouts/base}}

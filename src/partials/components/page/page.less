@@ -1,0 +1,28 @@
+.page {
+  padding: 100px 20px 40px;
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  > .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.page--main {
+  height: 100vh;
+  overflow: hidden;
+  background-color: @primary;
+}
+
+.page--inner {
+  height: auto;
+  background-color: @white;
+}
