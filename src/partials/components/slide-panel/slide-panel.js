@@ -14,10 +14,10 @@ var sidePanel = {
 
     renderNext: function (nextElement) {
         nextElement.show();
-        nextElement.css('zIndex', this.z++).toggleClass('slideInLeft');
+        nextElement.css('zIndex', this.z++).toggleClass('pt-page-moveFromRight');
         this.current = this.next;
         setTimeout(function() {
-            nextElement.css('zIndex', sidePanel.z++).toggleClass('slideInLeft');
+            nextElement.css('zIndex', sidePanel.z++).toggleClass('pt-page-moveFromRight');
         }, 1000);
     },
 
@@ -28,10 +28,10 @@ var sidePanel = {
 
     hidePrevious: function() {
         var element = $('.slide-panel__item.'+this.current);
-        element.removeClass('slideInLeft');
-        element.toggleClass('slideOutRight');
+        element.removeClass('pt-page-moveFromRight');
+        element.toggleClass('pt-page-moveToLeft');
         element.hide();
-        element.toggleClass('slideOutRight');
+        element.toggleClass('pt-page-moveToLeft');
     },
 
     handle: function(element) {

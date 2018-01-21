@@ -38,13 +38,13 @@ module.exports = (function() {
 	  let targetPage;
 	  reverse = true;
     (current - 1 < 0) ? targetPage = pagesCount - 1: targetPage = current - 1;
-    console.log('>>>', current, targetPage);
-	  nextPage({animation: 18, showPage: targetPage});
+	  nextPage({animation: 4, showPage: targetPage});
   }
 
 	function nextPage(options = {animation: 17}) {
 		let animation = (options.animation) ? options.animation : options;
-    let targetPage = (options.showPage || options.showPage >= 0) ? options.showPage : current + 1;
+    let targetPage = (options.hasOwnProperty('showPage') || options.showPage >= 0) ? options.showPage : current + 1;
+    if (targetPage < current) animation = 4;
 
 		if( isAnimating ) {
 			return false;
@@ -54,7 +54,7 @@ module.exports = (function() {
 
 		let $currPage = $pages.eq( current++ );
 
-    if ( current > pagesCount - 1 && !reverse) {
+    if (current > pagesCount - 1 && !reverse) {
       targetPage = 0;
     }
 

@@ -22,6 +22,7 @@ $(window).on('load', function() {
 
     toggles.on("click", function() {
       let index = toggles.index(this);
+      console.log('click by', index)
       clearTimeout(timer);
       carouselLoop(index);
     });
