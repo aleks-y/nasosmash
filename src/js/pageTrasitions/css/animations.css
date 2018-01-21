@@ -18,13 +18,13 @@
 }
 
 .pt-page-moveFromRight {
-	-webkit-animation: moveFromRight .6s ease both;
-	animation: moveFromRight .6s ease both;
+	-webkit-animation: moveFromRight 1.2s ease both;
+	animation: moveFromRight 1.2s ease both;
 }
 
 .pt-page-moveToTop {
-	-webkit-animation: moveToTop .6s ease both;
-	animation: moveToTop .6s ease both;
+	-webkit-animation: moveToTop 1.2s ease both;
+	animation: moveToTop 1.2s ease both;
 }
 
 .pt-page-moveFromTop {
@@ -38,8 +38,8 @@
 }
 
 .pt-page-moveFromBottom {
-	-webkit-animation: moveFromBottom .6s ease both;
-	animation: moveFromBottom .6s ease both;
+	-webkit-animation: moveFromBottom 1.2s ease both;
+	animation: moveFromBottom 1.2s ease both;
 }
 
 /* fade */
@@ -130,11 +130,11 @@
 	from { -webkit-transform: translateX(-100%); transform: translateX(-100%); }
 }
 
-@-webkit-keyframes moveToRight { 
+@-webkit-keyframes moveToRight {
 	from { }
 	to { -webkit-transform: translateX(100%); }
 }
-@keyframes moveToRight { 
+@keyframes moveToRight {
 	from { }
 	to { -webkit-transform: translateX(100%); transform: translateX(100%); }
 }
@@ -258,8 +258,8 @@
 /* scale and fade */
 
 .pt-page-scaleDown {
-	-webkit-animation: scaleDown .7s ease both;
-	animation: scaleDown .7s ease both;
+	-webkit-animation: scaleDown 1.2s ease both;
+	animation: scaleDown 1.2s ease both;
 }
 
 .pt-page-scaleUp {

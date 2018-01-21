@@ -1,0 +1,57 @@
+.btn {
+  display: block;
+
+  width: 20em;
+  padding: 0.5em 1em;
+  border: 3px solid @primary;
+  border-radius: 1em;
+
+  font-family: @font-main;
+  font-size: 18px;
+  line-height: 1.25em;
+  text-decoration: none;
+  text-align: center;
+  color: @white;
+  text-shadow: none;
+
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: @primary;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.btn--main {
+  font-size: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    color: @blue;
+  }
+}
+
+.btn--inner {
+  width: 250px;
+
+  color: @primary;
+  background-color: transparent;
+
+  &:hover {
+    color: @white;
+  }
+}
+
+.btn--white {
+  color: @white;
+  border-color: @white;
+  background-color: transparent;
+
+  &:hover {
+    color: @primary;
+    background-color: @white;
+  }
+}

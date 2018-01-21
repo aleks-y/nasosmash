@@ -1,0 +1,54 @@
+{{#> layouts/base title="Каталог продукции" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+  {{> components/main-nav/main-nav}}
+
+
+  <div class="page page--inner">
+    <div class="container">
+      {{> components/main-menu/main-menu}}
+      {{> components/page-title/page-title title="О компании"}}
+
+      <section class="category-description">
+        <div class="category-description__image">
+          <img src="img/about/title.jpg" width="426" height="380" alt="О компании">
+        </div>
+        <div class="category-description__text">
+          <p>ООО &laquo;НПО Насосмаш&raquo; осуществляет изготовление и&nbsp;поставку высококачественных нефтяных насосов типа&nbsp;НК и&nbsp;НКВ. Нефтяные насосы типа&nbsp;НК и&nbsp;НКВ применяются для перекачивания нефти, нефтепродуктов, масел, сжиженных углеводородных газов, органических растворителей и&nbsp;других жидкостей, сходных с&nbsp;указанными по&nbsp;физико-химическим свойствам и&nbsp;коррозионному воздействию на&nbsp;материал деталей насосов. Насосы предназначены для эксплуатации на&nbsp;предприятиях нефтегазодобывающей, нефтеперерабатывающей промышленности, в&nbsp;системах подачи топлива ТЭЦ, крупных котельных и&nbsp;газонаполнительных станций.</p>
+        </div>
+      </section>
+
+      {{> components/section-title/section-title title="наши объекты"}}
+
+    </div>
+
+    <section class="about-carousel">
+      <div>
+        <img src="img/about/slide-1.jpg" alt="">
+      </div>
+      <div>
+        <img src="img/about/slide-2.jpg" alt="">
+      </div>
+      <div>
+        <img src="img/about/slide-3.jpg" alt="">
+      </div>
+      <div>
+        <img src="img/about/slide-4.jpg" alt="">
+      </div>
+      <div>
+        <img src="img/about/slide-5.jpg" alt="">
+      </div>
+    </section>
+  </div>
+
+  {{> components/footer-main/footer-main}}
+  {{/inline}}
+
+  {{#* inline "scripts-block"}}
+    <script src="plugins/owlcarousel/owl.carousel.min.js"></script>
+  {{/inline}}
+{{/layouts/base}}

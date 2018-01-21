@@ -83,7 +83,8 @@ $(window).on('load', function() {
         name: 'мощность',
         type: 'bar',
         data: commonOpts.data.map(item => item.power)
-      }]
+      }],
+      color: ['#43789f']
     };
 
     const roundOption = {

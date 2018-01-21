@@ -1,0 +1,85 @@
+{{#> layouts/base title="Каталог продукции" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+  {{> components/main-nav/main-nav}}
+
+
+  <div class="page page--inner">
+    <div class="container">
+      {{> components/main-menu/main-menu}}
+      {{> components/page-title/page-title title="Нефтяные насосы"}}
+
+      <section class="category-description">
+        <div class="category-description__image">
+          <img src="img/catalog-items/catalog-item-Nasos_oil.jpg" width="426" height="380" alt="Нефтяные насосы">
+        </div>
+        <div class="category-description__text">
+          <p>ООО &laquo;НПО Насосмаш&raquo; осуществляет изготовление и&nbsp;поставку высококачественных нефтяных насосов типа&nbsp;НК и&nbsp;НКВ. Нефтяные насосы типа&nbsp;НК и&nbsp;НКВ применяются для перекачивания нефти, нефтепродуктов, масел, сжиженных углеводородных газов, органических растворителей и&nbsp;других жидкостей, сходных с&nbsp;указанными по&nbsp;физико-химическим свойствам и&nbsp;коррозионному воздействию на&nbsp;материал деталей насосов. Насосы предназначены для эксплуатации на&nbsp;предприятиях нефтегазодобывающей, нефтеперерабатывающей промышленности, в&nbsp;системах подачи топлива ТЭЦ, крупных котельных и&nbsp;газонаполнительных станций.</p>
+        </div>
+      </section>
+
+      <section class="subcategory">
+        {{> components/section-title/section-title title="Типы нефтяных насосов"}}
+        <ul class="subcategory__list">
+          <li class="subcategory__item">
+            <a href="oil-pump-nkv-series.html">
+              <h3 class="subcategory__title">Насосы серии НК, НКВ</h3>
+              <div class="subcategory__image">
+                <img src="img/oil-pump/NK_SERIUS.jpg" alt="Насосы серии НК, НКВ">
+              </div>
+            </a>
+          </li>
+          <li class="subcategory__item">
+            <a href="oil-pump-nkv-series.html">
+              <h3 class="subcategory__title">Насосы серии НК, НКВ</h3>
+              <div class="subcategory__image">
+                <img src="img/oil-pump/NK_SERIUS.jpg" alt="Насосы серии НК, НКВ">
+              </div>
+            </a>
+          </li>
+          <li class="subcategory__item">
+            <a href="oil-pump-nkv-series.html">
+              <h3 class="subcategory__title">Насосы серии НК, НКВ</h3>
+              <div class="subcategory__image">
+                <img src="img/oil-pump/NK_SERIUS.jpg" alt="Насосы серии НК, НКВ">
+              </div>
+            </a>
+          </li>
+          <li class="subcategory__item">
+            <a href="#">
+              <h3 class="subcategory__title">Насосы серии НПС</h3>
+              <div class="subcategory__image">
+                <img src="img/oil-pump/NPS_serius.jpg" alt="Насосы серии НПС">
+              </div>
+            </a>
+          </li>
+        </ul>
+        {{> components/btn/btn link="#" class="btn--inner" title="Задать вопрос"}}
+      </section>
+
+
+      <section class="category-carousel">
+        <div>
+          <img src="img/oil-pump/item1.jpg" alt="">
+        </div>
+        <div>
+          <img src="img/oil-pump/item2.jpg" alt="">
+        </div>
+        <div>
+          <img src="img/oil-pump/item3.jpg" alt="">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  {{> components/footer-main/footer-main}}
+  {{/inline}}
+
+  {{#* inline "scripts-block"}}
+    <script src="plugins/owlcarousel/owl.carousel.min.js"></script>
+  {{/inline}}
+{{/layouts/base}}

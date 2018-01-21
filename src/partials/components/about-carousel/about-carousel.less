@@ -1,0 +1,181 @@
+.about-carousel {
+  display: none;
+  width: 100%;
+  margin-bottom: 50px;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.about-carousel .about-carousel__stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  padding: 50px 0 30px;
+}
+
+.about-carousel .about-carousel__stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  -moz-backface-visibility: hidden;
+}
+
+.about-carousel .about-carousel__stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.about-carousel .owl-wrapper,
+.about-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+}
+
+.about-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+// .about-carousel .about-carousel__nav.disabled,
+// .about-carousel .about-carousel__dots.disabled {
+//   display: none;
+// }
+
+.about-carousel .about-carousel__nav .about-carousel__toggler,
+.about-carousel .about-carousel__dot {
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.about-carousel__nav {
+  div {
+    position: absolute;
+    top: 50%;
+
+    width: 30px;
+    height: 70px;
+    padding: 0;
+    border: none;
+
+    font-size: 0;
+
+    background-color: transparent;
+    background-image: url("../img/icon/slide-toggler.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.1s linear;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .about-carousel__toggler--prev {
+    left: 40px;
+
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .about-carousel__toggler--next {
+    right: 40px;
+
+    transform: translateY(-50%);
+  }
+}
+
+.about-carousel.about-carousel__loaded {
+  display: block;
+}
+
+.about-carousel.about-carousel__loading {
+  opacity: 0;
+  display: block;
+}
+
+.about-carousel.about-carousel__hidden {
+  opacity: 0;
+}
+
+.owl-carousel.owl-refresh .owl-item {
+  visibility: hidden;
+}
+
+/* No Js */
+.no-js .about-carousel {
+  display: block;
+}
+
+/*
+ *  Owl Carousel - Animate Plugin
+ */
+.about-carousel .animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.about-carousel .about-carousel__animated-in {
+  z-index: 0;
+}
+
+.about-carousel .about-carousel__animated-out {
+  z-index: 1;
+}
+
+.about-carousel .fadeOut {
+  animation-name: fadeOut;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.about-carousel .owl-item {
+  transition: all 1s ease-out;
+}
+
+.about-carousel .center {
+  transform: scale(1.2, 1.2) translateY(-30px);
+}
+
+.about-carousel {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

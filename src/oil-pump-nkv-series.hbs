@@ -1,0 +1,58 @@
+{{#> layouts/base title="Насосы серии НКВ" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+  {{> components/main-nav/main-nav}}
+
+  <div class="page page--inner">
+    {{> components/main-menu/main-menu}}
+
+    <div class="container">
+      {{> components/page-title/page-title title="Насосы серии НК, НКВ"}}
+
+      <section class="category-description">
+        <div class="category-description__image">
+          <img src="img/catalog-items/catalog-item-Nasos_oil.jpg" width="426" height="380" alt="Насосы серии НКВ">
+        </div>
+        <div class="category-description__text">
+          <p>Насосы НК, НКВ&nbsp;&mdash; консольные, центробежные, горизонтальные, одноступенчатые, с&nbsp;рабочими колёсами одностороннего входа с&nbsp;подачей до&nbsp;600 м3/час. Насосы предназначены для применения в&nbsp;технологических установках нефтеперерабатывающих и&nbsp;нефтехимических производств, для перекачивания нефти, нефтепродуктов, сжиженных углеводородных газов и&nbsp;других ждкостей, сходных с&nbsp;указанными по&nbsp;физическим свойствам (удельному весу, вязкости и&nbsp;пр.) и&nbsp;коррозионному воздействию на&nbsp;материал деталей насосов. Нефтяные насосы выпускаются в&nbsp;десятках модификаций.</p>
+          {{> components/btn/btn link="#" class="btn--inner" title="Заказать"}}
+        </div>
+      </section>
+
+      <section class="category-carousel">
+        <div>
+          <img src="img/oil-pump/item1.jpg" alt="">
+        </div>
+        <div>
+          <img src="img/oil-pump/item2.jpg" alt="">
+        </div>
+        <div>
+          <img src="img/oil-pump/item3.jpg" alt="">
+        </div>
+      </section>
+
+      <section class="technical">
+        {{> components/section-title/section-title title="Технические показатели"}}
+        <div class="technical__text">
+          <p>Помимо задачи&nbsp;&mdash; перекачивания нефти или сжиженного газа, насосы могут применяться на&nbsp;теплоэнергоцентралях в&nbsp;системах подачи топлива, а&nbsp;также в&nbsp;сетях, использующих жидкости, обладающими сходными с&nbsp;нефтью физическими характеристиками. Содержание примесей в&nbsp;перекачиваемой жидкости не&nbsp;более 0,2% по&nbsp;массе, размер частиц не&nbsp;более 0,2&nbsp;мм.</p>
+          <p>Насосы изготавливаются в&nbsp;различных климатических исполнениях и&nbsp;различных климатических исполнений и&nbsp;различных категорий, предназначены для работы вне помещений и&nbsp;в&nbsp;помещениях, где по&nbsp;условиям работы возможно образование взрывоопасных газов, паров или смеси пыли с&nbsp;воздухом, и&nbsp;относящихся к&nbsp;различным категориям взрывоопасности.</p>
+          <p>материал исполнения проточной части и&nbsp;рабочего колеса для нефтепродуктов до&nbsp;+400&deg;C: &laquo;С&raquo;&nbsp;&mdash; сталь 25Л; &laquo;Х&raquo;&nbsp;&mdash; сталь 20Х5МЛ; &laquo;Н&raquo;&nbsp;&mdash; сталь нержавеющая 12Х18Н9ТЛ.</p>
+        </div>
+      </section>
+
+      {{> components/charts/charts}}
+    </div>
+  </div>
+
+  {{> components/footer-main/footer-main}}
+  {{/inline}}
+
+  {{#* inline "scripts-block"}}
+    <script src="plugins/e-charts/e-charts.js"></script>
+    <script src="plugins/owlcarousel/owl.carousel.min.js"></script>
+  {{/inline}}
+{{/layouts/base}}

@@ -1,7 +1,9 @@
+/*
 html, body {
   height: 100vh;
   overflow: hidden;
 }
+*/
 
 .pt-perspective {
 	position: relative;

@@ -1,0 +1,29 @@
+{{#> layouts/base title="Форма заказа" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+  {{> components/main-nav/main-nav}}
+
+
+  <div class="page page--inner">
+    <div class="container">
+      {{> components/main-menu/main-menu}}
+      {{> components/page-title/page-title title="Форма заказа"}}
+
+      {{> components/form-order/form-order}}
+      {{> components/contacts/contacts}}
+    </div>
+    <div class="map" id="map"></div>
+  </div>
+
+  {{> components/footer-main/footer-main}}
+
+  {{/inline}}
+
+  {{#* inline "scripts-block"}}
+  {{/inline}}
+{{/layouts/base}}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBcrw8HPYQ2-_JCBqWb1aH2DWn-QXtklI&callback=initMap"></script>

@@ -1,0 +1,170 @@
+.catalog-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  margin-bottom: 70px;
+}
+
+.catalog-list__item {
+  position: relative;
+
+  width: 30%;
+  margin-bottom: 30px;
+
+  background-color: @white;
+  box-shadow: 0px 14px 38px 0px rgba(0, 0, 0, 0.33);
+
+  &:hover .catalog-list__hover {
+    transform: scaleY(1);
+  }
+
+  &:hover .catalog-list__links {
+    transform: scaleY(1);
+  }
+
+  &:hover img {
+    border-color: @white;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: @black;
+    text-decoration: none;
+  }
+}
+
+.catalog-list__hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 20px 20px;
+
+  background-color: transparent;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: fade(@primary, 80%);
+  }
+
+  &:hover .catalog-list__links {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.catalog-list__title {
+  color: @gray--dark;
+
+  &:hover {
+    text-decoration: underline;
+    color: @blue;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  h2 {
+    min-height: 48px;
+    margin: 0;
+
+    font-family: @font-main;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.catalog-list__links {
+  padding: 20px 0 0;
+  margin: 0;
+
+  list-style: none;
+
+  transition: all 0.3s ease-out;
+  transform: translateY(20px);
+  transform-origin: top;
+  opacity: 0;
+
+  a {
+    display: inline-block;
+
+    font-family: @font-secondary;
+    font-size: 20px;
+    line-height: 1.25;
+    text-decoration: none;
+    vertical-align: baseline;
+    color: @gray;
+
+    transition: all 0.2s linear;
+
+    &:hover {
+      color: @blue;
+      transform: translateX(5px;);
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}
+
+.catalog-list__image {
+  position: relative;
+  z-index: 10;
+
+  padding: 0;
+  margin: 0;
+
+  figcaption {
+    padding: 10px 15px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    transition: all 0.2s linear;
+  }
+
+  h2 {
+    margin: 0;
+
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.catalog__description {
+  margin-bottom: 50px;
+
+  p {
+    margin-bottom: 0.5em;
+
+    font-family: @font-secondary;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+    color: @gray;
+  }
+
+  p:last-child {
+    margin: 0;
+  }
+}

@@ -1,0 +1,21 @@
+{{#> layouts/base title="Доставка" }}
+
+  {{#* inline "nav"}}
+    {{> components/nav}}
+  {{/inline}}
+
+  {{#*inline "content-block"}}
+  {{> components/main-nav/main-nav}}
+
+
+  <div class="page page--inner">
+    {{> components/main-menu/main-menu}}
+    {{> components/delivery/delivery}}
+    {{> components/slide-panel/slide-panel}}
+  </div>
+  {{/inline}}
+
+  {{#* inline "scripts-block"}}
+    <script src="plugins/imageMapResize/js/imageMapResizer.min.js"></script>
+  {{/inline}}
+{{/layouts/base}}

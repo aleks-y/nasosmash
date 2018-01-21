@@ -1,0 +1,29 @@
+<section class="order-section">
+    <form class="form-order" enctype="multipart/form-data" action="" method="POST" onsubmit="return false">
+      <div class="form-group">
+          <h3 class="text-uppercase">Контактные данные</h3>
+          <div class="form-order__input-wrapper">
+              <label for="form-order__name" class="form-order__label">Ваше имя</label>
+              <input type="text" class="form-order__input" id="form-order__name" name="username" required>
+          </div>
+          <div class="form-order__input-wrapper">
+              <label for="form-order__phone" class="form-order__label">Ваш телефон</label>
+              <input type="text" class="form-order__input" id="form-order__phone" name="userphone" required>
+          </div>
+          <div class="form-order__input-wrapper">
+              <label for="form-order__textarea" class="form-order__label">Что вас интересует?</label>
+              <textarea class="form-order__textarea" id="form-order__textarea" name="userphone"></textarea>
+          </div>
+          {{!-- <label class="form-order__label-file">
+              <input type="file" class="form-order__file" name="file">
+              <span class="text-uppercase">
+                  Прикрепить проект
+              </span>
+          </label> --}}
+          <p class="form-order__agreement">* Отправляя форму, вы даете согласие на обработку своих персональных данных, а также принимаете условия
+              <a href="/agreement.html">Соглашения об использовании сайта</a>.
+          </p>
+      </div>
+      <input type="submit" class="btn btn--inner"  id="callback_form" onclick="return false" value="Отправить">
+    </form>
+</section>
