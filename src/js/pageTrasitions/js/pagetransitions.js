@@ -43,8 +43,8 @@ module.exports = (function() {
 
 	function nextPage(options = {animation: 17}) {
 		let animation = (options.animation) ? options.animation : options;
-    let targetPage = (options.hasOwnProperty('showPage') || options.showPage >= 0) ? options.showPage : current + 1;
-    if (targetPage < current) animation = 4;
+    let targetPage = (options.showPage || options.showPage >= 0) ? options.showPage : current + 1;
+		if (targetPage < current) animation = 4;
 
 		if( isAnimating ) {
 			return false;

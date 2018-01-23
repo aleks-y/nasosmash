@@ -9,3 +9,7 @@ $(".main-nav__toggler").click(function () {
 $(".main-nav__close").click(function () {
   mainMenu.removeClass("main-menu--open");
 });
+
+$(".main-menu__overlay").click(function () {
+  mainMenu.removeClass("main-menu--open");
+});

@@ -2,7 +2,7 @@ var fileInputs = $('.form-order__input');
 var form = $('.form-order');
 var submitBtn = $('.form-order__submit');
 var fileInput = $('.form-order__file');
-var fileLabel = $('.form-order__label-file span');
+// var fileLabel = $('.form-order__label-file span');
 var textarea = $('.form-order__textarea');
 
 submitBtn.on('click', function(e) {
@@ -11,17 +11,16 @@ submitBtn.on('click', function(e) {
     form[0].reset();
 });
 
-fileInput.on('change', function(e) {
-
-    if (!$(this)[0].files[0]) {
-        filename ? fileLabel.text(filename):  fileLabel.text('Прикрепить проект');
-    } else {
-        filename = $(this)[0].files[0].name;
-        console.log('filename ', filename);
-        fileLabel.text(filename);
-    }
-});
-
+// fileInput.on('change', function(e) {
+//
+//     if (!$(this)[0].files[0]) {
+//         filename ? fileLabel.text(filename):  fileLabel.text('Прикрепить проект');
+//     } else {
+//         filename = $(this)[0].files[0].name;
+//         console.log('filename ', filename);
+//         fileLabel.text(filename);
+//     }
+// });
 
 //Проверка, если вдруг после возвращения поля оказались заполнены до фокуса в них
 if (fileInputs.val()) {
@@ -77,5 +76,3 @@ textarea.on('blur', function (e) {
         $(this).siblings('label').removeClass('form-order__label--focused');
     }
 });
-
-
