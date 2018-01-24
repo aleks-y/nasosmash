@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-  if (window.location.pathname !== '/') {
+  if (document.getElementById('charts')) {
     // based on prepared DOM, initialize echarts instance
     const myChart = echarts.init(document.getElementById('charts'));
 

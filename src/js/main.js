@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-  if (window.location.pathname === '/') {
+  if (window.location.pathname === '/' || window.location.pathname.includes('index.html')) {
     const List = require("./libs/List");
     const PageTransitions = require("./pageTrasitions/js/pagetransitions");
     const eventBus = require("./libs/EventEmitter").EventEmitter;
