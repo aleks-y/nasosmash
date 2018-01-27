@@ -11,7 +11,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
     padding: 20px 20px 20px;
   }
@@ -45,6 +45,7 @@
 
 .main-nav__toggler {
   position: relative;
+  flex-shrink: 0;
 
   width: 47px;
   height: 45px;
@@ -77,6 +78,7 @@
 
 .main-nav__logo {
   margin-right: auto;
+  padding-right: 30px;
 
   font-size: 30px;
   line-height: 1;
@@ -97,7 +99,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   a {
     transition: all 0.1s linear;
@@ -115,6 +117,7 @@
   text-transform: uppercase;
   color: @primary;
   text-decoration: none;
+  white-space: nowrap;
 
   &:hover {
     color: @white;
@@ -135,6 +138,7 @@
   color: @gray;
   text-decoration: none;
   text-shadow: 0px 0px 10px @white;
+  white-space: nowrap;
 
   &:hover {
     opacity: 0.6;
