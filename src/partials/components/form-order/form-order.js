@@ -1,10 +1,10 @@
-var fileInputs = $('.form-order__input');
-var form = $('.form-order');
-var submitBtn = $('.form-order__submit');
-var fileInput = $('.form-order__file');
-var fileLabel = $('.form-order__label-file span');
-var textarea = $('.form-order__textarea');
-var filename = '';
+const fileInputs = $('.form-order__input');
+const form = $('.form-order');
+const submitBtn = $('.form-order__submit');
+const fileInput = $('.form-order__file');
+const fileLabel = $('.form-order__label-file span');
+const textarea = $('.form-order__textarea');
+let filename = '';
 
 submitBtn.on('click', function(e) {
     e.preventDefault();
@@ -89,9 +89,7 @@ $('#callback_form').click(function (){
                 }
               }
             });
-            $('#form-order__name').val("");
-            $('#form-order__phone').val("");
-            $('#form-order__textarea').val("");
+          formReset();
         },
         error: function(err) {
           $.confirm({
@@ -116,3 +114,10 @@ textarea.on('blur', function (e) {
         $(this).siblings('label').removeClass('form-order__label--focused');
     }
 });
+
+function formReset() {
+  $('#form-order__name').val("").siblings().removeClass('form-order__label--focused');
+  $('#form-order__phone').val("").siblings().removeClass('form-order__label--focused');
+  $('#form-order__textarea').val("").siblings().removeClass('form-order__label--focused');
+  fileLabel.text('Прикрепить проект');
+}
