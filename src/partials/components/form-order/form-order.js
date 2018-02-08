@@ -10,6 +10,7 @@ submitBtn.on('click', function(e) {
     e.preventDefault();
     form.trigger('submit');
     form[0].reset();
+    fileLabel.text('Прикрепить проект');
 });
 
 fileInput.on('change', function(e) {
@@ -63,14 +64,17 @@ $('#callback_form').click(function (){
         });
         return;
     }
+    let fd = new FormData();
+    fd.append('name', $('#form-order__name').val());
+    fd.append('phone', $('#form-order__phone').val());
+    fd.append('comment', $('#form-order__textarea').val());
+    fd.append('file', $('.form-order__file')[0].files[0]);
     $.ajax({
         type: 'post',
         url:'post_callback.php',
-        data:{
-            name: $('#form-order__name').val(),
-            phone: $('#form-order__phone').val(),
-            textarea: $('#form-order__textarea').val(),
-        },
+        processData: false,
+        contentType: false,
+        data: fd,
         success : function(mes){
             $.confirm({
               animation: 'scale',
