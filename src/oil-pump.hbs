@@ -1,5 +1,10 @@
 {{#> layouts/base title="Каталог продукции" }}
 
+  {{#*inline "head-block"}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+  {{/inline}}
+
   {{#* inline "nav"}}
     {{> components/nav}}
   {{/inline}}
@@ -46,16 +51,20 @@
       </section>
 
 
-      <section class="category-carousel">
-        <div>
-          <img src="img/oil-pump/item1.jpg" alt="">
-        </div>
-        <div>
-          <img src="img/oil-pump/item2.jpg" alt="">
-        </div>
-        <div>
-          <img src="img/oil-pump/item3.jpg" alt="">
-        </div>
+      <!--<section class="category-carousel">-->
+        <!--<div>-->
+          <!--<img src="img/oil-pump/item1.jpg" alt="">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<img src="img/oil-pump/item2.jpg" alt="">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<img src="img/oil-pump/item3.jpg" alt="">-->
+        <!--</div>-->
+      <!--</section>-->
+
+      <section class="repair-table">
+        {{> components/repair-table/repair-table}}
       </section>
     </div>
   </div>
